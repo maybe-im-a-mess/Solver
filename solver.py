@@ -10,6 +10,6 @@ def solve(exprs):
         solutions = set()
         for var in s.model():
             solutions.add(f'{var} = {s.model()[var]}')
-        print(solutions)
+        return solutions
     else:
         print("No solution!")
