@@ -13,3 +13,6 @@ def solve(exprs):
         return solutions
     else:
         print("No solution!")
+
+
+print(solve(["x + y +z = 10", "x < y", "x < 3", "0 < x"]))
