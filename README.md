@@ -1,25 +1,53 @@
-# Solver
-This solver was created as a part of a programming assignment.
+# ✎ᝰ.ᐟ⋆⑅˚₊ Z3 Equation Solver ✎ᝰ.ᐟ⋆⑅˚₊
 
-The aim of this project is to implement a function that solves systems of equations and inequations. The (in)equations are given as lists of strings. For example, the system
+## Overview
 
+**Solver** is a Python-based tool designed to solve systems of equations and inequations using the [Z3 Theorem Prover](https://github.com/Z3Prover/z3). It was originally created as part of a programming assignment.
 
->x + y + z = 10
-> 
-> x < y
-> 
-> 0 < x
-> 
-> x < 3
+The core goal of this project is to implement a robust function that parses and solves systems of mathematical (in)equations when provided as a list of strings.
 
-is expressed as the list
-> exprs = [”x + y +z = 10”, ”x < y”, ”x < 3”, ”0 < x”]
+### 📝 Example
 
-<h3>Requirements:</h3>
-- z3
+For instance, consider the following mathematical system:
+> x + y + z = 10  
+> x < y  
+> 0 < x  
+> x < 3  
 
-To install z3, run the following command:
-```pip install z3-solver```
+In this solver, the system is expressed simply as a list of strings:
+```python
+exprs = ["x + y + z = 10", "x < y", "0 < x", "x < 3"]
+```
 
-<h3>How to use:</h3>
-- Run "solver.py" and enter your equation as a parameter.
+## Project Structure
+
+The codebase is organized into modular Python files to handle parsing and different types of expressions:
+* `solver.py` - The main executable script that ties everything together.
+* `parsers.py` / `arithmetical_parsers.py` / `boolean_parsers.py` - Scripts responsible for parsing strings into computable logic.
+* `general_expressions.py` / `arithmetical_expressions.py` / `boolean_expressions.py` - Scripts defining the logical rules and structures for Z3 evaluation.
+
+## Getting Started
+
+### Requirements
+This project relies on the Microsoft Z3 Theorem Prover Python binding. You need to install the `z3-solver` package to run the program.
+
+Install it via `pip`:
+```bash
+pip install z3-solver
+```
+
+### Installation
+Clone the repository to your local machine:
+```bash
+git clone https://github.com/maybe-im-a-mess/Solver.git
+cd Solver
+```
+
+### Usage
+To use the solver, run the main `solver.py` script from your terminal and pass your equations as parameters (or modify the script logic based on your desired inputs).
+
+```bash
+python solver.py
+```
+---
+*Developed for parsing and solving equations efficiently using Z3.*
